@@ -1,4 +1,4 @@
-emailjs.init("Y-quNINPcoLnsM10J");
+//emailjs.init("Y-quNINPcoLnsM10J");
 
 const elements = {
   selector: document.getElementById("selector"),
@@ -28,7 +28,7 @@ let url = "https://www.twitch.tv/"
 const audio = new Audio("./rosco_theme.mp3");
 audio.loop = true;
 audio.autoplay = true;
-audio.play();
+//audio.play();
 
 // Llenar el selector
 consolas.forEach((nombre) => {
