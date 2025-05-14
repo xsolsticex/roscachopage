@@ -41,7 +41,7 @@ elements.favoritos.placeholder = "Introduce un listado";
 
 // Evento de submit
 elements.submit.addEventListener("click", (e) => {
-  e.preventDefault();
+ // e.preventDefault();
 
   const { nombre, usuario, consola, saga, favoritos,mostPlayed} = elements;
 
