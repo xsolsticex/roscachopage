@@ -13,16 +13,37 @@ const elements = {
 
 // Lista de consolas
 const consolas = [
-  "Magnavox Odyssey", "Atari Pong", "Atari 2600", "Atari 2001", "Atari 5200",
-  "Sega SG-1000", "Nintendo NES", "Sega Master System", "Atari 7800",
-  "Sega Mega Drive", "Nintendo Game Boy", "Super Nintendo", "PlayStation",
-  "Sega Saturn", "Nintendo 64", "Sega Dreamcast", "Playstation 2",
-  "Nintendo Gamecube", "Xbox", "PSP", "Xbox 360", "Nintendo Wii",
-  "Playstation 3", "Playstation 4", "Xbox One", "Nintendo Switch",
-  "Playstation 5", "Xbox Series X|S",
+  "Magnavox Odyssey",
+  "Atari Pong",
+  "Atari 2600",
+  "Atari 2001",
+  "Atari 5200",
+  "Sega SG-1000",
+  "Nintendo NES",
+  "Sega Master System",
+  "Atari 7800",
+  "Sega Mega Drive",
+  "Nintendo Game Boy",
+  "Super Nintendo",
+  "PlayStation",
+  "Sega Saturn",
+  "Nintendo 64",
+  "Sega Dreamcast",
+  "Playstation 2",
+  "Nintendo Gamecube",
+  "Xbox",
+  "PSP",
+  "Xbox 360",
+  "Nintendo Wii",
+  "Playstation 3",
+  "Playstation 4",
+  "Xbox One",
+  "Nintendo Switch",
+  "Playstation 5",
+  "Xbox Series X|S",
 ].sort();
 
-let url = "https://www.twitch.tv/"
+let url = "https://www.twitch.tv/";
 
 // Audio
 const audio = new Audio("./rosco_theme.mp3");
@@ -41,23 +62,17 @@ elements.favoritos.placeholder = "Introduce un listado";
 
 // Evento de submit
 elements.submit.addEventListener("click", (e) => {
- // e.preventDefault();
 
-  const { nombre, usuario, consola, saga, favoritos,mostPlayed} = elements;
+  const { nombre, usuario, consola, saga, favoritos, mostPlayed } = elements;
 
-  if (nombre.value && usuario.value && consola.value && saga.value && mostPlayed.value && favoritos.value) {
-    const games = get_favoritos(favoritos.value);
-    const templateParams = {
-      title: "Solicitud Participante Roscacho",
-      name: usuario.value,
-      username: url+usuario.value,
-      console: consola.value,
-      mostPlayed: mostPlayed.value,
-      favSaga: saga.value,
-      games: games,
-    };
-    //sendMail(templateParams);
-  } else {
+  if (
+    !nombre.value ||
+    !usuario.value ||
+    !consola.value ||
+    !saga.value ||
+    !mostPlayed.value ||
+    !favoritos.value
+  ) {
     alert("No has llenado todos los campos");
   }
 });
@@ -65,7 +80,7 @@ elements.submit.addEventListener("click", (e) => {
 function get_favoritos(input) {
   return input
     .split(",")
-    .map(game => `\n- ${game.trim()}`)
+    .map((game) => `\n- ${game.trim()}`)
     .join("\n");
 }
 
