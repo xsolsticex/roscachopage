@@ -56,7 +56,7 @@ elements.submit.addEventListener("click", (e) => {
       favSaga: saga.value,
       games: games,
     };
-    sendMail(templateParams);
+    //sendMail(templateParams);
   } else {
     alert("No has llenado todos los campos");
   }
