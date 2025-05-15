@@ -45,12 +45,6 @@ const consolas = [
 
 let url = "https://www.twitch.tv/";
 
-// Audio
-const audio = new Audio("./rosco_theme.mp3");
-audio.loop = true;
-audio.autoplay = true;
-//audio.play();
-
 // Llenar el selector
 consolas.forEach((nombre) => {
   const option = new Option(nombre, nombre);
