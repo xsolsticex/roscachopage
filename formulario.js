@@ -9,7 +9,12 @@ const elements = {
   favoritos: document.getElementById("favoritos"),
   mostPlayed: document.getElementById("mostPlayed"),
   submit: document.getElementById("submit"),
+
 };
+
+let video = document.getElementById("sound")
+
+video.volume = 0.7
 
 // Lista de consolas
 const consolas = [
