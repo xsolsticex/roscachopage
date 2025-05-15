@@ -19,10 +19,6 @@ img {
   height: 40%;
 }
 
-video{
-  position: absolute;
-  opacity:0;
-}
 .titulo {
   position: absolute;
   top: -2%;

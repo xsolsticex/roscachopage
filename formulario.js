@@ -12,10 +12,6 @@ const elements = {
 
 };
 
-let video = document.getElementById("sound")
-
-video.volume = 0.7
-
 // Lista de consolas
 const consolas = [
   "Magnavox Odyssey",
