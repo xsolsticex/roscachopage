@@ -62,7 +62,6 @@ elements.favoritos.placeholder = "Introduce un listado";
 
 // Evento de submit
 elements.submit.addEventListener("click", (e) => {
-
   const { nombre, usuario, consola, saga, favoritos, mostPlayed } = elements;
 
   if (
@@ -75,6 +74,7 @@ elements.submit.addEventListener("click", (e) => {
   ) {
     alert("No has llenado todos los campos");
   }
+  get_server_status();
 });
 
 function get_favoritos(input) {
@@ -82,6 +82,19 @@ function get_favoritos(input) {
     .split(",")
     .map((game) => `\n- ${game.trim()}`)
     .join("\n");
+}
+
+function get_server_status() {
+  fetch("https://roscacho-backend.onrender.com/status")
+    .then(response => {
+      if (!response.ok) {
+        alert("El servicio no está disponible");
+      }
+    })
+    .catch(error => {
+      alert("No se pudo conectar al servidor");
+      console.error("Error de red:", error);
+    });
 }
 
 function sendMail(templateParams) {
